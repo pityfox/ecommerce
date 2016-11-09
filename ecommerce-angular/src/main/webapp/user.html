@@ -49,66 +49,104 @@
 					</div>
 				</div></td> -->
 
-			<td><button class="btn btn-info"
+			<td colspan="100"><button class="btn btn-info"
 					ng-click="userCtrl.addUser()">Ajout User</button></td>
 		</tr>
 	</table>
 
 	<fieldset ng-show="userCtrl.user">
 		<legend>Edition du user</legend>
-		<form method="post" ng-submit="userCtrl.save()">
-			<input type="hidden" id="id" ng-model="userCtrl.user.id" />
+		<form class="form-horizontal col-sm-5" method="post"
+			ng-submit="userCtrl.save()">
+
+			<input class="form-control"  type="hidden" id="id" ng-model="userCtrl.user.id" />
+
 			<div class="form-group">
-				<label for="role">Role</label> <select id="role"
-					ng-model="userCtrl.user.role"
-					ng-options="role for role in userCtrl.roles"></select>
+				<label class="col-sm-2 control-label" for="role">Role</label>
+				<div class="col-sm-10">
+					<select class="form-control" id="role" ng-model="userCtrl.user.role"
+						ng-options="role for role in userCtrl.roles"></select>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="nom">Nom</label> <input type="text" id="nom"
-					ng-model="userCtrl.user.nom" />
+				<label class="col-sm-2 control-label" for="nom">Nom</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="nom" ng-model="userCtrl.user.nom" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="prenom">Prénom</label> <input type="text" id="prenom"
-					ng-model="userCtrl.user.prenom" />
+				<label class="col-sm-2 control-label" for="prenom">Prénom</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="prenom" ng-model="userCtrl.user.prenom" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="numeroFax">Fax</label> <input type="text" id="numeroFax"
-					ng-model="userCtrl.user.numeroFax" />
+				<label class="col-sm-2 control-label" for="numeroFax">Fax</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="numeroFax"
+						ng-model="userCtrl.user.numeroFax" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="numeroTel">Tel</label> <input type="text" id="numeroTel"
-					ng-model="userCtrl.user.numeroTel" />
+				<label class="col-sm-2 control-label" for="numeroTel">Tel</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="numeroTel"
+						ng-model="userCtrl.user.numeroTel" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="email">Email</label> <input type="email" id="email"
-					ng-model="userCtrl.user.email" />
+				<label class="col-sm-2 control-label" for="email">Email</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="email" id="email" ng-model="userCtrl.user.email" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="adresse">Adresse</label> <input type="text" id="adresse"
-					ng-model="userCtrl.user.adresse.adresse" />
+				<label class="col-sm-2 control-label" for="adresse">Adresse</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="adresse"
+						ng-model="userCtrl.user.adresse.adresse" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="codePostal">CP</label> <input type="text"
-					id="codePostal" ng-model="userCtrl.user.adresse.codePostal" />
+				<label class="col-sm-2 control-label" for="codePostal">CP</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="codePostal"
+						ng-model="userCtrl.user.adresse.codePostal" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="ville">Ville</label> <input type="text" id="ville"
-					ng-model="userCtrl.user.adresse.ville" />
+				<label class="col-sm-2 control-label" for="ville">Ville</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="ville"
+						ng-model="userCtrl.user.adresse.ville" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="pays">Pays</label> <input type="text" id="pays"
-					ng-model="userCtrl.user.adresse.pays" />
+				<label class="col-sm-2 control-label" for="pays">Pays</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="pays" ng-model="userCtrl.user.adresse.pays" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="login">Login</label> <input type="text" id="login"
-					ng-model="userCtrl.user.login" />
+				<label class="col-sm-2 control-label" for="login">Login</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="login" ng-model="userCtrl.user.login" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="motDePass">MDP</label> <input type="text" id="motDePass"
-					ng-model="userCtrl.user.motDePass" />
+				<label class="col-sm-2 control-label" for="motDePass">MDP</label>
+				<div class="col-sm-10">
+					<input class="form-control"  type="text" id="motDePass"
+						ng-model="userCtrl.user.motDePass" />
+				</div>
 			</div>
-			
-			<input type="submit" value="Valider" class="btn btn-default" />
+
+			<div class="form-group">
+			<div class="col-sm-2"></div>
+				<div class="col-sm-10 text-right">
+					<input type="submit" value="Valider" class="form-control btn btn-primary" />
+				</div>
+			</div>
 		</form>
 	</fieldset>
 

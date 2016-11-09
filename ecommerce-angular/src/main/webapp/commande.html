@@ -24,14 +24,14 @@
 		</tr>
 
 		<tr>
-			<td><button class="btn btn-info"
+			<td colspan="100"><button class="btn btn-info"
 					ng-click="commandeCtrl.addCommande()">Ajout Commande</button></td>
 		</tr>
 	</table>
 
 	<fieldset ng-show="commandeCtrl.commande">
 		<legend>Edition de la commande</legend>
-		<form method="post" ng-submit="commandeCtrl.save()">
+		<form  class="form-horizontal" method="post" ng-submit="commandeCtrl.save()">
 			<input type="hidden" id="id" ng-model="commandeCtrl.commande.id" />
 
 			<div class="form-group">
