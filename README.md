@@ -4,8 +4,8 @@ CAS PRATIQUE : BOUTIQUE E-COMMERCE
 - ecommerce-spring-forAngular prepared
 
 
-Objectifs
------------
+Règles
+-------
 
 - DAO
 - Choisir Techno de présentation
@@ -19,11 +19,11 @@ Objectifs
 - 1 CRUD fonctionnel
 
 
-Objectifs mid:
+> Objectifs mid:
 =================
 - 2 CRUD
 
 
-Objectifs max:
+> Objectifs max:
 =================
 - 2 CRUD + lien
