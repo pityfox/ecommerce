@@ -1,0 +1,61 @@
+<div class="container">
+	<h2>Liste des commandes</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>User Id</th>
+			<th>Date</th>
+			<th>Commentaire</th>
+			<th>Total</th>
+			<th colspan="2"></th>
+		</tr>
+
+
+		<tr ng-repeat="commande in commandeCtrl.commandes">
+			<td>{{commande.id}}</td>
+			<td>{{commande.user.id}}</td>
+			<td>{{commande.date | date:'dd/MM/yyyy'}}</td>
+			<td>{{commande.commentaire}}</td>
+			<td>{{commande.total}}</td>
+			<td><a class="btn btn-info btn-xs"
+				ng-click="commandeCtrl.edit(commande.id)">Editer</a></td>
+			<td><a class="btn btn-info btn-xs"
+				ng-click="commandeCtrl.remove(commande.id)">Supprimer</a></td>
+		</tr>
+
+		<tr>
+			<td><button class="btn btn-info"
+					ng-click="commandeCtrl.addCommande()">Ajout Commande</button></td>
+		</tr>
+	</table>
+
+	<fieldset ng-show="commandeCtrl.commande">
+		<legend>Edition de la commande</legend>
+		<form method="post" ng-submit="commandeCtrl.save()">
+			<input type="hidden" id="id" ng-model="commandeCtrl.commande.id" />
+
+			<div class="form-group">
+				<label for="user">User</label> <select id="user"
+					ng-model="commandeCtrl.commande.user"
+					ng-options="user as user.id for user in commandeCtrl.users track by user.id"></select>
+			</div>
+
+
+			<div class="form-group">
+				<label for="date">Date</label> <input type="text" id="date"
+					ng-model="commandeCtrl.commande.date"  />
+			</div>
+			<div class="form-group">
+				<label for="commentaire">Commentaire</label> <textarea id="commentaire"
+					ng-model="commandeCtrl.commande.commentaire" >{{commandeCtrl.commande.commentaire}}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="total">Total</label> <input type="text" id="total"
+					ng-model="commandeCtrl.commande.total" />
+			</div>
+			
+			<input type="submit" value="Valider" class="btn btn-default" />
+		</form>
+	</fieldset>
+
+</div>

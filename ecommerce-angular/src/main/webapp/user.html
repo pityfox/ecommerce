@@ -1,0 +1,115 @@
+<div class="container">
+	<h2>Liste des users</h2>
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Role</th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>N° Fax</th>
+			<th>N° Tel</th>
+			<th>Email</th>
+			<th>Adresse</th>
+			<th>CP</th>
+			<th>Ville</th>
+			<th>Pays</th>
+			<th>Login</th>
+			<th>MDP</th>
+			<th colspan="2"></th>
+		</tr>
+
+
+		<tr ng-repeat="user in userCtrl.users">
+			<td>{{user.id}}</td>
+			<td>{{user.role}}</td>
+			<td>{{user.nom}}</td>
+			<td>{{user.prenom}}</td>
+			<td>{{user.numeroFax}}</td>
+			<td>{{user.numeroTel}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.adresse.adresse}}</td>
+			<td>{{user.adresse.codePostal}}</td>
+			<td>{{user.adresse.ville}}</td>
+			<td>{{user.adresse.pays}}</td>
+			<td>{{user.login}}</td>
+			<td>{{user.motDePass}}</td>
+			<td><a class="btn btn-info btn-xs"
+				ng-click="userCtrl.edit(user.id)">Editer</a></td>
+			<td><a class="btn btn-info btn-xs"
+				ng-click="userCtrl.remove(user.id)">Supprimer</a></td>
+		</tr>
+
+		<tr>
+			<!-- <td colspan="5"><div class="dropdown">
+					<button class="btn btn-info">Ajout User</button>
+					<div class="dropdown-content">
+						<a ng-click="userCtrl.addUserPhysique()">Physique</a>
+						<a ng-click="userCtrl.addUserMoral()">Moral</a>
+						<a ng-click="userCtrl.addUserEI()">EI</a>
+					</div>
+				</div></td> -->
+
+			<td><button class="btn btn-info"
+					ng-click="userCtrl.addUser()">Ajout User</button></td>
+		</tr>
+	</table>
+
+	<fieldset ng-show="userCtrl.user">
+		<legend>Edition du user</legend>
+		<form method="post" ng-submit="userCtrl.save()">
+			<input type="hidden" id="id" ng-model="userCtrl.user.id" />
+			<div class="form-group">
+				<label for="role">Role</label> <select id="role"
+					ng-model="userCtrl.user.role"
+					ng-options="role for role in userCtrl.roles"></select>
+			</div>
+			<div class="form-group">
+				<label for="nom">Nom</label> <input type="text" id="nom"
+					ng-model="userCtrl.user.nom" />
+			</div>
+			<div class="form-group">
+				<label for="prenom">Prénom</label> <input type="text" id="prenom"
+					ng-model="userCtrl.user.prenom" />
+			</div>
+			<div class="form-group">
+				<label for="numeroFax">Fax</label> <input type="text" id="numeroFax"
+					ng-model="userCtrl.user.numeroFax" />
+			</div>
+			<div class="form-group">
+				<label for="numeroTel">Tel</label> <input type="text" id="numeroTel"
+					ng-model="userCtrl.user.numeroTel" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input type="email" id="email"
+					ng-model="userCtrl.user.email" />
+			</div>
+			<div class="form-group">
+				<label for="adresse">Adresse</label> <input type="text" id="adresse"
+					ng-model="userCtrl.user.adresse.adresse" />
+			</div>
+			<div class="form-group">
+				<label for="codePostal">CP</label> <input type="text"
+					id="codePostal" ng-model="userCtrl.user.adresse.codePostal" />
+			</div>
+			<div class="form-group">
+				<label for="ville">Ville</label> <input type="text" id="ville"
+					ng-model="userCtrl.user.adresse.ville" />
+			</div>
+			<div class="form-group">
+				<label for="pays">Pays</label> <input type="text" id="pays"
+					ng-model="userCtrl.user.adresse.pays" />
+			</div>
+			<div class="form-group">
+				<label for="login">Login</label> <input type="text" id="login"
+					ng-model="userCtrl.user.login" />
+			</div>
+			<div class="form-group">
+				<label for="motDePass">MDP</label> <input type="text" id="motDePass"
+					ng-model="userCtrl.user.motDePass" />
+			</div>
+			
+			<input type="submit" value="Valider" class="btn btn-default" />
+		</form>
+	</fieldset>
+
+</div>
