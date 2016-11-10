@@ -1,4 +1,5 @@
 <div class="container">
+<section class="user">
 	<h2>Liste des users</h2>
 	<table class="table table-striped">
 		<tr>
@@ -59,7 +60,7 @@
 		<form class="form-horizontal col-sm-5" method="post"
 			ng-submit="userCtrl.save()">
 
-			<input class="form-control"  type="hidden" id="id" ng-model="userCtrl.user.id" />
+			<input type="hidden" id="id" ng-model="userCtrl.user.id" />
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label" for="role">Role</label>
@@ -149,5 +150,5 @@
 			</div>
 		</form>
 	</fieldset>
-
+</section>
 </div>

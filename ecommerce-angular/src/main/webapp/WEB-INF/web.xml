@@ -21,4 +21,17 @@
 		<url-pattern>/services/*</url-pattern>
 	</servlet-mapping>
 
+<!-- 	<servlet>
+		<servlet-name>indexServlet</servlet-name>
+		<jsp-file>/WEB-INF/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>indexServlet</servlet-name>
+		<url-pattern>/index</url-pattern>
+		<url-pattern>/app/*</url-pattern>
+	</servlet-mapping> -->
+<!-- 	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+	</welcome-file-list> -->
+
 </web-app>

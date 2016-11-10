@@ -1,4 +1,5 @@
 <div class="container">
+<section class="commande">
 	<h2>Liste des commandes</h2>
 	<table class="table table-striped">
 		<tr>
@@ -16,7 +17,7 @@
 			<td>{{commande.user.id}}</td>
 			<td>{{commande.date | date:'dd/MM/yyyy'}}</td>
 			<td>{{commande.commentaire}}</td>
-			<td>{{commande.total}}</td>
+			<td>{{commande.total | currency}}</td>
 			<td><a class="btn btn-info btn-xs"
 				ng-click="commandeCtrl.edit(commande.id)">Editer</a></td>
 			<td><a class="btn btn-info btn-xs"
@@ -31,31 +32,47 @@
 
 	<fieldset ng-show="commandeCtrl.commande">
 		<legend>Edition de la commande</legend>
-		<form  class="form-horizontal" method="post" ng-submit="commandeCtrl.save()">
+		<form class="form-horizontal col-sm-5" method="post"
+			ng-submit="commandeCtrl.save()">
 			<input type="hidden" id="id" ng-model="commandeCtrl.commande.id" />
 
 			<div class="form-group">
-				<label for="user">User</label> <select id="user"
-					ng-model="commandeCtrl.commande.user"
-					ng-options="user as user.id for user in commandeCtrl.users track by user.id"></select>
+				<label class="col-sm-2 control-label" for="user">User</label>
+				<div class="col-sm-10">
+					<select class="form-control" id="user" ng-model="commandeCtrl.commande.user"
+						ng-options="user as user.id for user in commandeCtrl.users track by user.id"></select>
+				</div>
 			</div>
 
 
 			<div class="form-group">
-				<label for="date">Date</label> <input type="text" id="date"
-					ng-model="commandeCtrl.commande.date"  />
+				<label class="col-sm-2 control-label" for="date">Date</label>
+				<div class="col-sm-10">
+					<input class="form-control" type="text" id="date"
+						ng-model="commandeCtrl.commande.date" />
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="commentaire">Commentaire</label> <textarea id="commentaire"
-					ng-model="commandeCtrl.commande.commentaire" >{{commandeCtrl.commande.commentaire}}</textarea>
+				<label class="col-sm-2 control-label" for="commentaire">Commentaire</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" id="commentaire"
+						ng-model="commandeCtrl.commande.commentaire">{{commandeCtrl.commande.commentaire}}</textarea>
+				</div>
 			</div>
 			<div class="form-group">
-				<label for="total">Total</label> <input type="text" id="total"
-					ng-model="commandeCtrl.commande.total" />
+				<label class="col-sm-2 control-label" for="total">Total</label>
+				<div class="col-sm-10">
+					<input class="form-control" type="text" id="total"
+						ng-model="commandeCtrl.commande.total" />
+				</div>
 			</div>
-			
-			<input type="submit" value="Valider" class="btn btn-default" />
+			<div class="form-group">
+			<div class="col-sm-2"></div>
+				<div class="col-sm-10 text-right">
+					<input type="submit" value="Valider" class="form-control btn btn-primary" />
+				</div>
+			</div>
 		</form>
 	</fieldset>
-
+</section>
 </div>
